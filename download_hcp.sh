@@ -7,7 +7,8 @@
 #
 #  Usage: download_hcp.sh <subject_list> <file_list>
 #
-#		subject_list - the name of the file containing subject #				    numbers (one subject number per line)
+#		subject_list - the name of the file containing subject 
+#				    numbers (one subject number per line)
 #		file_list - the name of the file containing HCP full
 #				 file names (one file name per line)
 #				 NOTICE: file names must include full path
