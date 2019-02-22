@@ -1,5 +1,5 @@
 # download_hcp
-Tools to download data from the Human Connectome Project repostiories
+Tools to download data from the Human Connectome Project repositories
 
 Current tools:
 
