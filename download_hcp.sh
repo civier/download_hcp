@@ -20,17 +20,22 @@
 #	   For each subject directory, the required files will be
 #	   downloaded from the HCP repository on Amazon S3
 #
-#  Notes:  1. Make sure aws is installed in ~/.local/bin
-#	   2. Files missing from Amazon S3 will be skipped
+#  Notes:  1. To get access to HCP on Amazon S3, please follow the instructions here:
+#		https://wiki.humanconnectome.org/display/PublicData/How+To+Connect+to+Connectome+Data+via+AWS  
+#	   2. Make sure aws is installed in ~/.local/bin
+#          3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP
+#	   4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
+#	      but are missing in Amazon S3)
 #
-#  Example: to download resting state data files for two selected subjects, use -
+#  Example: to download resting state data files for two selected subjects (all 4 runs), use -
+#
 #           	download_hcp.sh subjects.txt files.txt
 #	     
-#	    The content of subjects.txt is:
+#	    The content of subjects.txt should be:
 #	    	100307
 #		100408
 #
-#           The content of files.txt is:
+#           The content of files.txt should be:
 # 		MNINonLinear/aparc+aseg.nii.gz
 #		MNINonLinear/T1w_restore_brain.nii.gz
 #		MNINonLinear/Results/rfMRI_REST1_LR/rfMRI_REST1_LR_hp2000_clean.nii.gz
