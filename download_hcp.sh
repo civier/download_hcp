@@ -20,6 +20,9 @@
 #	   For each subject directory, the required files will be
 #	   downloaded from the HCP repository on Amazon S3
 #
+#  Notes:  1. Make sure aws is installed in ~/.local/bin
+#	   2. Files missing from Amazon S3 will be skipped
+#
 #  Example: to download resting state data files for two selected subjects, use -
 #           	download_hcp.sh subjects.txt files.txt
 #	     
@@ -37,7 +40,7 @@
 #
 #################################################################
 
-export PATH="/home/oren/.local/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 for subj_id in `cat $1 | tr '\n' ' '`
 do
 	echo ${subj_id}
