@@ -25,7 +25,8 @@
 #	   2. aws should be installed on your system. Make sure it is installed in ~/.local/bin
 #                You can follow the instructions here:
 #                https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
-#          3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP
+#          3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP  
+#		 (choosing the default region should be sufficient for most users)
 #	   4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
 #	      but are missing in Amazon S3)
 #
