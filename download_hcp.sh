@@ -22,7 +22,9 @@
 #
 #  Notes:  1. To get access to HCP on Amazon S3, please follow the instructions here:
 #		https://wiki.humanconnectome.org/display/PublicData/How+To+Connect+to+Connectome+Data+via+AWS  
-#	   2. Make sure aws is installed in ~/.local/bin
+#	   2. aws should be installed on your system. Make sure it is installed in ~/.local/bin
+#                You can follow the instructions here:
+#                https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
 #          3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP
 #	   4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
 #	      but are missing in Amazon S3)
@@ -53,6 +55,7 @@ do
 	for file in `cat $2 | tr '\n' ' '`
 	do
 		mkdir ${subj_id}/`dirname ${file}`		
+		echo aws s3 cp s3://hcp-openaccess/HCP_1200/${subj_id}/${file} ./${subj_id}/${file}		
 		aws s3 cp s3://hcp-openaccess/HCP_1200/${subj_id}/${file} ./${subj_id}/${file}
 	done
 done
