@@ -40,9 +40,9 @@ Usage: download_hcp.sh <subject_list> <file_list>
    Example: to download resting state data files for two selected subjects (all 4 runs), use -
            	download_hcp.sh subjects.txt files.txt
 	     
-	  The content of subjects.txt should be:
+    The content of subjects.txt should be:
 	  100307
-		100408
+	  100408
 
     The content of files.txt should be:
  		MNINonLinear/aparc+aseg.nii.gz
