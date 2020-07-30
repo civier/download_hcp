@@ -26,12 +26,12 @@ Usage: download_hcp.sh <subject_list> <file_list>
   Notes:  
      1. To get access to HCP on Amazon S3, please follow the instructions here:
 		https://wiki.humanconnectome.org/display/PublicData/How+To+Connect+to+Connectome+Data+via+AWS  
-	   2. aws should be installed on your system. Make sure it is installed in ~/.local/bin
+     2. aws should be installed on your system. Make sure it is installed in ~/.local/bin
                 You can follow the instructions here:
                 https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
      3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP  
 		 (choosing the default region should be sufficient for most users)
-	   4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
+     4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
 	      but are missing in Amazon S3)
 
    Example: to download resting state data files for two selected subjects (all 4 runs), use -
