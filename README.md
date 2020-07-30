@@ -24,6 +24,7 @@ Usage: download_hcp.sh <subject_list> <file_list>
 	   downloaded from the HCP repository on Amazon S3
 
   Notes:  
+  
      1. To get access to HCP on Amazon S3, please follow the instructions here:
 		https://wiki.humanconnectome.org/display/PublicData/How+To+Connect+to+Connectome+Data+via+AWS  
 		
