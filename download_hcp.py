@@ -2,10 +2,10 @@
 
 #################################################################
 #
-#  download_hcp.sh
+#  download_hcp.py
 #  ===============
 #
-#  Usage: download_hcp.sh <subject_list> <file_list>
+#  Usage: download_hcp.py <subject_list> <file_list>
 #
 #		subject_list -  the file containing subject numbers
 #				(one subject number per line)
@@ -32,7 +32,7 @@
 #
 #  Example: to download resting state data files for two selected subjects (all 4 runs), use -
 #
-#           	download_hcp.sh subjects.txt files.txt
+#           	download_hcp.py subjects.txt files.txt
 #	     
 #	    The content of subjects.txt should be:
 #	    	100307
