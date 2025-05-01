@@ -5,7 +5,7 @@ Current tools:
 
 download_hcp.py - download selected files for selected subjects from the HCP repository on Amazon S3
 
-download_hcp.sh
+download_hcp.py
 ===============
 
 Usage: download_hcp.py <subject_list> <file_list>
