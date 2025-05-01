@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/python
 
 #################################################################
 #
@@ -48,15 +48,43 @@
 #
 #################################################################
 
-export PATH="~/.local/bin:$PATH"
-for subj_id in `cat $1 | tr '\n' ' '`
-do
-	echo ${subj_id}
-	mkdir ${subj_id}
-	for file in `cat $2 | tr '\n' ' '`
-	do
-		mkdir ${subj_id}/`dirname ${file}`		
-		echo aws s3 cp s3://hcp-openaccess/HCP_1200/${subj_id}/${file} ./${subj_id}/${file}		
-		aws s3 cp s3://hcp-openaccess/HCP_1200/${subj_id}/${file} ./${subj_id}/${file}
-	done
-done
+import os
+import subprocess
+from pathlib import Path
+import sys
+
+def download_hcp(subjects_file, files_file):
+    # Read subject IDs
+    with open(subjects_file, 'r') as f:
+        subject_ids = [line.strip() for line in f if line.strip()]
+
+    # Read file paths
+    with open(files_file, 'r') as f:
+        file_paths = [line.strip() for line in f if line.strip()]
+
+    # Ensure AWS CLI is in PATH
+    os.environ["PATH"] = f"{os.path.expanduser('~')}/.local/bin:" + os.environ["PATH"]
+
+    for subj_id in subject_ids:
+        print(subj_id)
+        subj_dir = Path(subj_id)
+        subj_dir.mkdir(exist_ok=True)
+
+        for file_path in file_paths:
+            local_path = subj_dir / file_path
+            local_path.parent.mkdir(parents=True, exist_ok=True)
+
+            s3_path = f"s3://hcp-openaccess/HCP_1200/{subj_id}/{file_path}"
+            print(f"aws s3 cp {s3_path} {local_path}")
+            try:
+                subprocess.run(["aws", "s3", "cp", s3_path, str(local_path)],
+                               check=True)
+            except subprocess.CalledProcessError as e:
+                print(f"Failed to download {s3_path}: {e}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python download_hcp.py <subject_list> <file_list>")
+        sys.exit(1)
+
+    download_hcp(sys.argv[1], sys.argv[2])
