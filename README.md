@@ -8,7 +8,7 @@ download_hcp.py - download selected files for selected subjects from the HCP rep
 download_hcp.sh
 ===============
 
-Usage: download_hcp.sh <subject_list> <file_list>
+Usage: download_hcp.py <subject_list> <file_list>
 
 		subject_list -  the file containing subject numbers
 				(one subject number per line)
