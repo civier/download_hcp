@@ -5,15 +5,15 @@
 #  download_hcp.py
 #  ===============
 #
-#  Usage: download_hcp.py <subject_list> <file_list>
+#  Usage: download_hcp.py <subjects_list_file> <full_filenames_list_file>
 #
-#		subject_list -  the file containing subject numbers
-#				(one subject number per line)
-#		file_list - 	the file containing HCP full filenames
-#				(one filename per line)
-#				NOTICE: file names must include full path
-#					relative to the base of each HCP
-#					subject directory
+#		subjects_list_file         -  the file containing subject numbers
+#				                      (one subject number per line)
+#		full_filenames_list_file - 	the file containing HCP full filenames
+#				                    (one filename per line)
+#				                    NOTICE: file names must include full path
+#					                        relative to the base of each HCP
+#					                        subject directory
 #
 #  Output: For every subject, a subdirectory with the subject 
 #	   number will be created below the current directory.
