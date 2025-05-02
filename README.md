@@ -12,7 +12,7 @@ Usage: download_hcp.py <subjects_list_file> <full_filenames_list_file>
 
 		subjects_list - 		the file containing subject numbers
 						(one subject number per line)
-		full_filename_list_file - 	the file containing HCP full filenames
+		full_filenames_list_file - 	the file containing HCP full filenames
 						(one full filename per line)
 						NOTICE: full filenames are file names with complete path
 							relative to the base of each HCP subject directory
