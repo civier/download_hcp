@@ -31,7 +31,7 @@ Usage: download_hcp.py <subjects_list_file> <full_filenames_list_file>
                 You can follow the instructions here:
                 https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
 		
-     3. Use '~/.local/bin/aws configre' to set aws with the credentials provided by HCP  
+     3. Use '~/.local/bin/aws configure' to set aws with the credentials provided by HCP  
 		 (choosing the default region should be sufficient for most users)
 		 
      4. HCP files missing from Amazon S3 will be skipped (notice that some files are available on ConnectomeDB,
